@@ -1,0 +1,26 @@
+{
+  "name": "is-even-using-odd",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/is-even-using-odd/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/is-even-using-odd",
+        "main": "libs/is-even-using-odd/src/index.ts",
+        "tsConfig": "libs/is-even-using-odd/tsconfig.lib.json",
+        "assets": ["libs/is-even-using-odd/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/is-even-using-odd/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

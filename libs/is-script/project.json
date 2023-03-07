@@ -1,0 +1,33 @@
+{
+  "name": "is-script",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/is-script/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/is-script",
+        "main": "libs/is-script/src/index.ts",
+        "tsConfig": "libs/is-script/tsconfig.lib.json",
+        "assets": ["libs/is-script/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/is-script/**/*.ts"]
+      }
+    },
+    "seed": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "ts-node libs/is-script/src/seed.ts"
+      }
+    }
+  },
+  "tags": []
+}
